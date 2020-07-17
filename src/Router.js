@@ -9,6 +9,11 @@ import NavBar from './baseComponents/NavBar';
 
 //importing Home component
 import Home from './baseComponents/Home'
+import Signup from './user/Signup'
+import Login from './user/Login'
+
+import Users from './user/Users'
+
 
 
 
@@ -21,9 +26,10 @@ const Router = () => (
             
             {/* with "exact" property, we get exact representation of component */}
             <Route exact path="/" component={Home}/>
+            <Route exact path="/users" component={Users}/>
+            <Route exact path="/register" component={Signup}/>
+            <Route exact path="/login" component={Login}/>
         
-
-
         </Switch>
     </div>
 )
