@@ -47,6 +47,21 @@ export const signin = user => {
     }
 }
 
+export const signout = (next)=>{
+    //check if token from local storage is deleted
+  // call the api to logout
+  if(typeof window !== "undefined") localStorage.removeItem("JWT")
+      next()
+      return fetch("http://localhost:8080/signout", {
+          method: "GET"
+      })
+      .then(response => {
+          console.log('signout', response.body.message);
+          return response.json()
+      })
+      .catch(err => console.log(err))
+};
+
 
 //is authenticated method checks if the user is authenticated (checks the token in local storage)
 //we can conditionally show and hide links based on this helper method
@@ -89,3 +104,35 @@ export const socialLogin = user => {
 };
 
 
+export const forgotPassword = email => {
+    console.log("email: ", email);
+    return fetch(`${process.env.REACT_APP_API_URL}/forgot-password/`, {
+        method: "PUT",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email })
+    })
+        .then(response => {
+            console.log("forgot password response: ", response);
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+ 
+export const resetPassword = resetInfo => {
+    return fetch(`${process.env.REACT_APP_API_URL}/reset-password/`, {
+        method: "PUT",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(resetInfo)
+    })
+        .then(response => {
+            console.log("forgot password response: ", response);
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};

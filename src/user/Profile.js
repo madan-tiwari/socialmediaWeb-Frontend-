@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import DefaultAvatar from '../images/default_avatar.png';
+import DeleteUser from "./DeleteUser"
+import FollowButton from "../followUnfollowComponent/FollowButton"
+import ProfileTabs from "../followUnfollowComponent/ProfileTab"
 import {postsByUser} from '../post/postAPI'
 
 //is authenticated method checks if the user is authenticated (checks the token in local storage)
@@ -60,6 +63,45 @@ class Profile extends Component {
         })
         return match
     }
+
+    //onclick event
+    //takes function callAi as arguement that makes request to the api
+    //we send this method to child component
+    clickFollow = callApi => {
+        const userId = isAuthenticated().user._id;
+        const token = isAuthenticated().token;
+
+        callApi(userId, token, this.state.user._id)
+        .then(data =>{
+            if(data.error){
+                this.setState({error: data.error})
+            }else{
+                //populating following as not state (if follow is clicked then unfollow and viceversa)
+                this.setState({user: data, following: !this.state.following})  //whatever it was done, we need to alter the value
+            }
+        })
+    }
+
+
+    //it takes arguement from the componentDidMount (userId)
+    init = (userId)=>{
+        const token = isAuthenticated().token;
+        this.read(userId, token)
+        .then(data =>{
+            if(data.error){
+                this.setState({redirectToSignin: true})
+                console.log("ERROR")
+            }
+            else{
+                // console.log(data)
+                let following = this.checkFollow(data)
+                this.setState({user: data, following}) 
+                //to pass the userID to postsByUser()
+                this.loadPosts(data._id)
+            }
+        })
+    }
+
 
     //postsByUser (userId , token)-> runs when loadPosts run with init which is run when the component mounts
     loadPosts = userId => {
@@ -131,14 +173,49 @@ class Profile extends Component {
                                 >
                                         Edit Profile
                                 </Link>
+                                <DeleteUser userId = {this.state.user._id} /> {/* using DeleteUser Component and passing userId as props*/}
                             </div>
-                        ) : (<div></div>)
-                         }
+                        ) : (<FollowButton following={this.state.following} onButtonClick={this.clickFollow}/>)}
 
+                        {/* SuperAdmin Update/Delete */}
+                        <div>
+                            {isAuthenticated().user &&
+                                isAuthenticated().user.role === "admin" && (
+                                    <div class="card mt-5">
+                                        <div className="card-body">
+                                            <h5 className="card-title">
+                                                SUPER ADMIN
+                                            </h5>
+                                            <p className="mb-2 text-danger">
+                                                UPDATE/DELETE as SuperAdmin
+                                            </p>
+                                            <Link
+                                                className="btn btn-raised btn-info mr-5"
+                                                to={`/user/edit/${this.state.user._id}`}
+                                            >
+                                                Edit Profile
+                                            </Link>
+                                            <DeleteUser userId={this.state.user._id} />
+                                        </div>
+                                    </div>
+                                )}
                         </div>
                     </div>
                        
                 </div>
+                <div className="row">
+                        <div className="col md-12 mt-5 mb-5">
+                            <hr/>
+                            <p className="lead">{this.state.user.about}</p>
+                            <hr/>
+                            <ProfileTabs 
+                                followers={this.state.user.followers} 
+                                following={this.state.user.following}
+                                posts={this.state.posts}
+                            />
+                        </div>
+                </div>
+            </div>
         );
     }
 }

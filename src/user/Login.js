@@ -80,6 +80,17 @@ class Login extends Component {
         if(this.state.redirect){return <Redirect to="/"/>}
         return (
             <div className = "container">
+                <h2 className="mt-5 mb-5">LOGIN HERE</h2>
+
+
+                {/* to keep the error div hidden we are writing instyle css
+                double {{}}  first set for jsx. second for style
+                applying conditional rendering 
+                if there is error displays error, if no error it wont be displayed
+                tertiary conditional statement */}
+                <div className= "alert alert-danger" style={{ display: this.state.error ? "" : "none"}}>
+                    {this.state.error}
+                </div>
                 
                 {/* LOGIN FORM */}
                 <form>
