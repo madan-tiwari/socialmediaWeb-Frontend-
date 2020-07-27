@@ -3,9 +3,9 @@ import Posts from "../post/Posts"
 const Home = () => (
    
    <div>
-        <div className="jumbotron">
+        <div className="jumbotron" >
             <h2>HOME</h2>
-            <p className="lead">WELCOME</p>
+            <p id="welcome" className="lead">WELCOME</p>
         </div>
         <div className="container">
             <Posts/>

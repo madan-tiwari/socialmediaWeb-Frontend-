@@ -100,14 +100,14 @@ class Login extends Component {
                         "value" to sync the state and input => known as CONTROLLED COMPONENTS*/}
                     <div className="form-group">
                         <label className="text-muted">Email</label>
-                        <input  type="email" onChange={this.handleChange("email")}  className="form-control" value={this.state.email}/>
+                        <input  name="email" type="email" id="email" onChange={this.handleChange("email")}  className="form-control" value={this.state.email}/>
                     </div>
                     <div className="form-group">
                         <label className="text-muted">Password</label>
-                        <input type="password" onChange={this.handleChange("password")}  className="form-control" value={this.state.password} />
+                        <input name="password" type="password" id="password" onChange={this.handleChange("password")}  className="form-control" value={this.state.password} />
                     </div>
                     {/* when button is clicked register function is triggered */}
-                    <button onClick={this.login} className="btn btn-raised btn-primary">LOGIN</button>
+                    <button onClick={this.login} className="btn btn-raised btn-primary" id="login">LOGIN</button>
                 </form>
                 <p>
                     <Link to="/forgot-password" className="text-info">

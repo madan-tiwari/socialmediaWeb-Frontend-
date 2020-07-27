@@ -93,18 +93,18 @@ class Signup extends Component {
                             when user inputs we grab the value and put it in the state
                             onChange we execute handleChange method event handler and
                             "value" to sync the state and input => known as CONTROLLED COMPONENTS*/}
-                        <input type="text" onChange={this.handleChange("name")}  className="form-control" value={this.state.name} />
+                        <input id="fullname" type="text" onChange={this.handleChange("name")}  className="form-control" value={this.state.name} />
                     </div>
                     <div className="form-group">
                         <label className="text-muted">Email</label>
-                        <input  type="email" onChange={this.handleChange("email")}  className="form-control" value={this.state.email}/>
+                        <input id="email" type="email" onChange={this.handleChange("email")}  className="form-control" value={this.state.email}/>
                     </div>
                     <div className="form-group">
                         <label className="text-muted">Password</label>
-                        <input type="password" onChange={this.handleChange("password")}  className="form-control" value={this.state.password} />
+                        <input id="password" type="password" onChange={this.handleChange("password")}  className="form-control" value={this.state.password} />
                     </div>
                     {/* when button is clicked register function is triggered */}
-                    <button onClick={this.register} className="btn btn-raised btn-primary">SIGN UP</button>
+                    <button onClick={this.register} id="register" className="btn btn-raised btn-primary">SIGN UP</button>
                 </form>
             </div>
         );
