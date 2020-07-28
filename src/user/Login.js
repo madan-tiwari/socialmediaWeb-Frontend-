@@ -80,7 +80,7 @@ class Login extends Component {
         if(this.state.redirect){return <Redirect to="/"/>}
         return (
             <div className = "container">
-                <h2 className="mt-5 mb-5">LOGIN HERE</h2>
+                <h2 className="mt-5 mb-5" name="loginhere">LOGIN HERE</h2>
 
 
                 {/* to keep the error div hidden we are writing instyle css

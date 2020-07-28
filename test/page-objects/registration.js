@@ -15,7 +15,7 @@ module.exports = {
         var selectorName = page.registration.elements.searchInputName;
         var selectorEmail = page.registration.elements.searchInputEmail;
         var selectorPassword = page.registration.elements.searchInputPassword;
-        var selectorButton = page.login.elements.loginButton;
+        var selectorButton = page.registration.elements.registerButton;
 
 
         driver.findElement(selectorName).sendKeys(userName, selenium.Key.ENTER);

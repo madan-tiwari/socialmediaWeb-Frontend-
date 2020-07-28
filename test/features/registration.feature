@@ -6,5 +6,5 @@ Feature: Register in Social Media
   
   Scenario: user registeration vaidation test
     Given I am on the Social Media Registration page
-    When I enter "Test" and I enter "test@gmail.com" and I click SignUp
-    Then I should see "Password is required."
+    When I enter "madan" and I enter "madan@gmail.com" and I enter "madan123" and I click SignUp
+    Then I should see "Login Here" in the same page

@@ -1,5 +1,4 @@
-/* eslint-disable import/no-dynamic-require */
-#!/usr/bin/env node;
+#!/usr/bin/env node
 
 'use strict';
 
@@ -9,16 +8,13 @@ var program = require('commander');
 var pjson = require('./package.json');
 var cucumber = require('cucumber');
 
-// eslint-disable-next-line require-jsdoc
 function collectPaths(value, paths) {
     paths.push(value);
     return paths;
 }
 
-// eslint-disable-next-line require-jsdoc
 function coerceInt(value, defaultValue) {
 
-    // eslint-disable-next-line radix
     var int = parseInt(value);
 
     if (typeof int === 'number') return int;

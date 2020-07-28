@@ -80,7 +80,7 @@ class Signup extends Component {
                 {/* visible when user successfully gets registered (based on the successMessage varaible) */}
                 <div className= "alert alert-info" style={{ display: this.state.successMessage ? "" : "none"}}>
                     REGISTRATION SUCCESSFUL!! 
-                    <h6><Link to="/login">LOGIN HERE</Link></h6>
+                    <h6><Link to="/login" id="loginhere" name="loginhere">LOGIN HERE</Link></h6>
                 </div>
 
 
@@ -93,15 +93,15 @@ class Signup extends Component {
                             when user inputs we grab the value and put it in the state
                             onChange we execute handleChange method event handler and
                             "value" to sync the state and input => known as CONTROLLED COMPONENTS*/}
-                        <input id="fullname" type="text" onChange={this.handleChange("name")}  className="form-control" value={this.state.name} />
+                        <input id="fullName" name="fullName" type="text" onChange={this.handleChange("name")}  className="form-control" value={this.state.name} />
                     </div>
                     <div className="form-group">
                         <label className="text-muted">Email</label>
-                        <input id="email" type="email" onChange={this.handleChange("email")}  className="form-control" value={this.state.email}/>
+                        <input id="email" name="email" type="email" onChange={this.handleChange("email")}  className="form-control" value={this.state.email}/>
                     </div>
                     <div className="form-group">
                         <label className="text-muted">Password</label>
-                        <input id="password" type="password" onChange={this.handleChange("password")}  className="form-control" value={this.state.password} />
+                        <input id="password" type="password" name="password" onChange={this.handleChange("password")}  className="form-control" value={this.state.password} />
                     </div>
                     {/* when button is clicked register function is triggered */}
                     <button onClick={this.register} id="register" className="btn btn-raised btn-primary">SIGN UP</button>

@@ -1,51 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-    <testsuite name="login-in-social-media;login-for-registered-and-approved-user" tests="3" failures="1" skipped="2">
+    <testsuite name="login-in-social-media;login-for-registered-and-approved-user" tests="3" failures="0" skipped="0">
         <properties>
             <property name="@search" value="true">
             </property>
             <property name="URI" value="E:/Agile Web App/social media (frontend)/test/features/login.feature">
             </property>
         </properties>
-        <testcase name="Given I am on the Social Media Login page" classname="login-in-social-media;login-for-registered-and-approved-user" time="9.961159801">
-            <failure message="WebDriverError: Reached error page: about:neterror?e=connectionFailure&amp;u=http%3A//localhost%3A3000/login&amp;c=UTF-8&amp;d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A3000.">WebDriverError: Reached error page: about:neterror?e=connectionFailure&amp;u=http%3A//localhost%3A3000/login&amp;c=UTF-8&amp;d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A3000.
-    at Object.throwDecodedError (E:\Agile Web App\social media (frontend)\test\node_modules\selenium-webdriver\lib\error.js:550:15)
-    at parseHttpResponse (E:\Agile Web App\social media (frontend)\test\node_modules\selenium-webdriver\lib\http.js:565:13)
-    at Executor.execute (E:\Agile Web App\social media (frontend)\test\node_modules\selenium-webdriver\lib\http.js:491:26)
-    at processTicksAndRejections (internal/process/task_queues.js:97:5)
-    at async thenableWebDriverProxy.execute (E:\Agile Web App\social media (frontend)\test\node_modules\selenium-webdriver\lib\webdriver.js:700:17)</failure>
+        <testcase name="Given I am on the Social Media Login page" classname="login-in-social-media;login-for-registered-and-approved-user" time="4.806752">
         </testcase>
-        <testcase name="When I enter &quot;test@gmail.com&quot; and I enter &quot;test123&quot; and I click login" classname="login-in-social-media;login-for-registered-and-approved-user">
-            <skipped message="">
-            </skipped>
+        <testcase name="When I enter &quot;test@gmail.com&quot; and I enter &quot;test123&quot; and I click login" classname="login-in-social-media;login-for-registered-and-approved-user" time="0.452457499">
         </testcase>
-        <testcase name="Then I should see &quot;WELCOME&quot; in the results" classname="login-in-social-media;login-for-registered-and-approved-user">
-            <skipped message="">
-            </skipped>
+        <testcase name="Then I should see &quot;WELCOME&quot; in the results" classname="login-in-social-media;login-for-registered-and-approved-user" time="0.0219348">
         </testcase>
     </testsuite>
-    <testsuite name="register-in-social-media;user-registeration-vaidation-test" tests="3" failures="1" skipped="2">
+    <testsuite name="register-in-social-media;user-registeration-vaidation-test" tests="3" failures="1" skipped="0">
         <properties>
             <property name="@search" value="true">
             </property>
             <property name="URI" value="E:/Agile Web App/social media (frontend)/test/features/registration.feature">
             </property>
         </properties>
-        <testcase name="Given I am on the Social Media Registration page" classname="register-in-social-media;user-registeration-vaidation-test" time="10.3242097">
-            <failure message="WebDriverError: Reached error page: about:neterror?e=connectionFailure&amp;u=http%3A//localhost%3A3000/register&amp;c=UTF-8&amp;d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A3000.">WebDriverError: Reached error page: about:neterror?e=connectionFailure&amp;u=http%3A//localhost%3A3000/register&amp;c=UTF-8&amp;d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A3000.
-    at Object.throwDecodedError (E:\Agile Web App\social media (frontend)\test\node_modules\selenium-webdriver\lib\error.js:550:15)
-    at parseHttpResponse (E:\Agile Web App\social media (frontend)\test\node_modules\selenium-webdriver\lib\http.js:565:13)
-    at Executor.execute (E:\Agile Web App\social media (frontend)\test\node_modules\selenium-webdriver\lib\http.js:491:26)
-    at processTicksAndRejections (internal/process/task_queues.js:97:5)
-    at async thenableWebDriverProxy.execute (E:\Agile Web App\social media (frontend)\test\node_modules\selenium-webdriver\lib\webdriver.js:700:17)</failure>
+        <testcase name="Given I am on the Social Media Registration page" classname="register-in-social-media;user-registeration-vaidation-test" time="5.228019201">
         </testcase>
-        <testcase name="When I enter &quot;Test&quot; and I enter &quot;test@gmail.com&quot; and I click SignUp" classname="register-in-social-media;user-registeration-vaidation-test">
-            <skipped message="">
-            </skipped>
+        <testcase name="When I enter &quot;madan&quot; and I enter &quot;madan@gmail.com&quot; and I enter &quot;madan123&quot; and I click SignUp" classname="register-in-social-media;user-registeration-vaidation-test" time="0.355854399">
         </testcase>
-        <testcase name="Then I should see &quot;Password is required.&quot;" classname="register-in-social-media;user-registeration-vaidation-test">
-            <skipped message="">
-            </skipped>
+        <testcase name="Then I should see &quot;Login Here&quot; in the same page" classname="register-in-social-media;user-registeration-vaidation-test" time="0.2339283">
+            <failure message="AssertionError: expected &apos;Login Here&apos; to equal &apos;&apos;">AssertionError: expected &apos;Login Here&apos; to equal &apos;&apos;
+    at E:\Agile Web App\social media (frontend)\test\step-definitions\registration-steps.js:23:24
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)</failure>
         </testcase>
     </testsuite>
 </testsuites>
