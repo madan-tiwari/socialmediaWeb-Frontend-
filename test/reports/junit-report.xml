@@ -7,28 +7,29 @@
             <property name="URI" value="E:/Agile Web App/social media (frontend)/test/features/login.feature">
             </property>
         </properties>
-        <testcase name="Given I am on the Social Media Login page" classname="login-in-social-media;login-for-registered-and-approved-user" time="4.806752">
+        <testcase name="Given I am on the Social Media Login page" classname="login-in-social-media;login-for-registered-and-approved-user" time="4.5958978">
         </testcase>
-        <testcase name="When I enter &quot;test@gmail.com&quot; and I enter &quot;test123&quot; and I click login" classname="login-in-social-media;login-for-registered-and-approved-user" time="0.452457499">
+        <testcase name="When I enter &quot;test@gmail.com&quot; and I enter &quot;test123&quot; and I click login" classname="login-in-social-media;login-for-registered-and-approved-user" time="0.500165399">
         </testcase>
-        <testcase name="Then I should see &quot;WELCOME&quot; in the results" classname="login-in-social-media;login-for-registered-and-approved-user" time="0.0219348">
+        <testcase name="Then I should see &quot;WELCOME&quot; in the results" classname="login-in-social-media;login-for-registered-and-approved-user" time="0.019459299">
         </testcase>
     </testsuite>
-    <testsuite name="register-in-social-media;user-registeration-vaidation-test" tests="3" failures="1" skipped="0">
+    <testsuite name="register-in-social-media;user-registeration-vaidation-test" tests="3" failures="0" skipped="2">
         <properties>
             <property name="@search" value="true">
             </property>
             <property name="URI" value="E:/Agile Web App/social media (frontend)/test/features/registration.feature">
             </property>
         </properties>
-        <testcase name="Given I am on the Social Media Registration page" classname="register-in-social-media;user-registeration-vaidation-test" time="5.228019201">
+        <testcase name="Given I am on the Social Media Registration page" classname="register-in-social-media;user-registeration-vaidation-test" time="4.9371846">
         </testcase>
-        <testcase name="When I enter &quot;madan&quot; and I enter &quot;madan@gmail.com&quot; and I enter &quot;madan123&quot; and I click SignUp" classname="register-in-social-media;user-registeration-vaidation-test" time="0.355854399">
+        <testcase name="When I enter &quot;madan&quot; and I enter &quot;madan@gmail.com&quot; and I enter &quot;madan123&quot;and I click SIGNUP" classname="register-in-social-media;user-registeration-vaidation-test">
+            <skipped message="">
+            </skipped>
         </testcase>
-        <testcase name="Then I should see &quot;Login Here&quot; in the same page" classname="register-in-social-media;user-registeration-vaidation-test" time="0.2339283">
-            <failure message="AssertionError: expected &apos;Login Here&apos; to equal &apos;&apos;">AssertionError: expected &apos;Login Here&apos; to equal &apos;&apos;
-    at E:\Agile Web App\social media (frontend)\test\step-definitions\registration-steps.js:23:24
-    at processTicksAndRejections (internal/process/task_queues.js:97:5)</failure>
+        <testcase name="Then I should see &quot;REGISTRATION SUCCESSFUL!!&quot;" classname="register-in-social-media;user-registeration-vaidation-test">
+            <skipped message="">
+            </skipped>
         </testcase>
     </testsuite>
 </testsuites>

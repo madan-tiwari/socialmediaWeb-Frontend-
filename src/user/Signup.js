@@ -78,7 +78,7 @@ class Signup extends Component {
                 </div>
                 
                 {/* visible when user successfully gets registered (based on the successMessage varaible) */}
-                <div className= "alert alert-info" style={{ display: this.state.successMessage ? "" : "none"}}>
+                <div id = "regSuccess" className= "alert alert-info" style={{ display: this.state.successMessage ? "" : "none"}}>
                     REGISTRATION SUCCESSFUL!! 
                     <h6><Link to="/login" id="loginhere" name="loginhere">LOGIN HERE</Link></h6>
                 </div>
@@ -101,10 +101,11 @@ class Signup extends Component {
                     </div>
                     <div className="form-group">
                         <label className="text-muted">Password</label>
-                        <input id="password" type="password" name="password" onChange={this.handleChange("password")}  className="form-control" value={this.state.password} />
+                        <input id="password" type="password" name="password" onChange={this.handleChange("password")}  className="form-control" value={this.state.password} 
+                        />
                     </div>
                     {/* when button is clicked register function is triggered */}
-                    <button onClick={this.register} id="register" className="btn btn-raised btn-primary">SIGN UP</button>
+                    <button onClick={this.register} id="register" name="register" className="btn btn-raised btn-primary">SIGN UP</button>
                 </form>
             </div>
         );

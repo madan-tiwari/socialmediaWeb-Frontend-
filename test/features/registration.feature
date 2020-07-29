@@ -6,5 +6,5 @@ Feature: Register in Social Media
   
   Scenario: user registeration vaidation test
     Given I am on the Social Media Registration page
-    When I enter "madan" and I enter "madan@gmail.com" and I enter "madan123" and I click SignUp
-    Then I should see "Login Here" in the same page
+    When I enter "madan" and I enter "madan@gmail.com" and I enter "madan123"and I click SIGNUP
+    Then I should see "REGISTRATION SUCCESSFUL!!"
