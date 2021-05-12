@@ -40,7 +40,7 @@
     "eyes.selenium": "0.0.72",
     "fs-plus": "2.9.1",
     "geckodriver": "^1.19.1",
-    "merge": "^1.2.1",
+    "merge": "^2.1.1",
     "nodemon": "^2.0.4",
     "phantomjs-prebuilt": "2.1.12",
     "require-dir": "0.3.2"
